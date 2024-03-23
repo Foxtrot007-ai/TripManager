@@ -1,10 +1,10 @@
-package com.Foxtrot007.TripManager;
+package com.foxtrot.tripmanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TripManagerApplicationTests {
+class TripmanagerApplicationTests {
 
 	@Test
 	void contextLoads() {

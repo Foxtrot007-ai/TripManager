@@ -1,13 +1,13 @@
-package com.Foxtrot007.TripManager;
+package com.foxtrot.tripmanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TripManagerApplication {
+public class TripmanagerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TripManagerApplication.class, args);
+		SpringApplication.run(TripmanagerApplication.class, args);
 	}
 
 }

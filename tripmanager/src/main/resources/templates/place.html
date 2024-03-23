@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div>
+    <h2 >Client test</h2>
+    <tr>
+        <div align = "left" >           
+             <h3><a  th:href="@{'/place/new'}">Add new</a></h3>     
+        </div>
+    
+    </tr>
+    <tr>
+    
+    <div class="col-sm-5" align = "center">
+                 <div class="panel-body" align = "center" >
+                 <table class="table">
+  <thead class="thead-dark">
+    <tr>
+            <th>Place Id</th>
+            <th>Name</th>
+            <th>region</th>
+            <th>link</th>
+            <th>Edit</th>
+            <th>Delete</th>
+       </tr>
+  </thead>
+  <tbody>
+      <tr  th:each="place : ${listOfPlaces }">
+        <td th:text="${place.id}">Place Id</td>
+        <td th:text="${place.name}">name</td>
+        <td th:text="${place.region}">region</td>
+        <td th:text="${place.link}">link</td>                
+        <td>
+            <a th:href="@{'/place/edit/' + ${place.id}}">Edit</a>
+        </td>                                
+        <td>
+            <a th:href="@{'/place/delete/' + ${place.id}}">Delete</a>
+        </td>            
+        </tr> 
+   
+  </tbody>
+</table>
+                    
+                 </div>
+            </div> 
+    </tr>
+    </tbody>
+    </table>
+    <div>
+</body>
+</html>

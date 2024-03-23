@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div>
+    <h2 >Client test</h2>
+    <tr>
+        <div align = "left" >           
+             <h3><a  th:href="@{'/client/new'}">Add new</a></h3>     
+        </div>
+    
+    </tr>
+    <tr>
+    
+    <div class="col-sm-5" align = "center">
+                 <div class="panel-body" align = "center" >
+                 <table class="table">
+  <thead class="thead-dark">
+    <tr>
+              <th>Client Id</th>
+            <th>LastName</th>
+            <th>FirstName</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+       </tr>
+  </thead>
+  <tbody>
+      <tr  th:each="client : ${listOfClients }">
+        <td th:text="${client.id}">Client ID</td>
+        <td th:text="${client.lastName}">lastName</td>
+        <td th:text="${client.firstName}">firstName</td>
+        <td th:text="${client.email}">email</td>                
+        <td>
+            <a th:href="@{'/client/edit/' + ${client.id}}">Edit</a>
+        </td>                                
+        <td>
+            <a th:href="@{'/client/delete/' + ${client.id}}">Delete</a>
+        </td>            
+        </tr> 
+   
+  </tbody>
+</table>
+                    
+                 </div>
+            </div> 
+    </tr>
+    </tbody>
+    </table>
+    <div>
+</body>
+</html>
